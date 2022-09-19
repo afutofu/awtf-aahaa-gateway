@@ -27,3 +27,10 @@ navbar {
   margin:0;
   margin-bottom:10px;
 }
+
+.background-image{
+  width:inherit;
+  height:100%;
+  position:absolute;
+  z-index:-100;
+}

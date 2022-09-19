@@ -35,7 +35,7 @@ const WalkPage = () => {
 
       <a
         id="awtf-button"
-        href="https://www.aahaasupportivehousing.com"
+        href="https://awalktofreedom.com"
         target="_blank"
         rel="noopener noreferrer"
       >

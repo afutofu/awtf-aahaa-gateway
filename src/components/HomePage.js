@@ -5,13 +5,18 @@ import "../styles/Home.css";
 import awtfLogo from "../assets/awtf-logo.png";
 import aahaaLogo from "../assets/aahaa-logo.png";
 
+import awtfBg from "../assets/awtf-bg.jpg";
+import aahaaBg from "../assets/aahaa-bg.jpg";
+
+import WalkPage from "./WalkPage";
+
 const HomePage = () => {
   const [showAwtf, setShowAwtf] = useState(false);
   const [showAahaa, setShowAahaa] = useState(false);
 
   return (
     <section id="home">
-      <a
+      <div
         id="awtf-container"
         href="/awtf"
         className={
@@ -21,14 +26,26 @@ const HomePage = () => {
             ? "container-shrink"
             : "container-normal"
         }
-        onMouseOver={() => setShowAwtf(true)}
-        onMouseLeave={() => setShowAwtf(false)}
+        onClick={() => {
+          if (showAwtf) {
+            setShowAwtf(false);
+            setShowAahaa(false);
+          } else {
+            setShowAwtf(true);
+            setShowAahaa(false);
+          }
+        }}
       >
+        <img
+          src={awtfBg}
+          alt="bridge going into forest"
+          className="background-image"
+        />
         <div className="container">
           <img id="awtf-logo" src={awtfLogo} alt="A Walk To Freedom" />
         </div>
-      </a>
-      <a
+      </div>
+      <div
         id="aahaa-container"
         href="/aahaa"
         className={
@@ -38,13 +55,25 @@ const HomePage = () => {
             ? "container-shrink"
             : "container-normal"
         }
-        onMouseOver={() => setShowAahaa(true)}
-        onMouseLeave={() => setShowAahaa(false)}
+        onClick={() => {
+          if (showAahaa) {
+            setShowAahaa(false);
+            setShowAwtf(false);
+          } else {
+            setShowAahaa(true);
+            setShowAwtf(false);
+          }
+        }}
       >
+        <img
+          src={aahaaBg}
+          alt="person opening up to sunlight"
+          className="background-image"
+        />
         <div className="container">
           <img id="aahaa-logo" src={aahaaLogo} alt="AAHAA" />
         </div>
-      </a>
+      </div>
     </section>
   );
 };
