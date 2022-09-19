@@ -24,10 +24,12 @@ const HomePage = () => {
           showAwtf
             ? "container-expand"
             : showAahaa
-            ? "container-shrink"
+            ? "container-shrink fixed-left"
             : "container-normal"
         }
         onClick={() => {
+          let selection = window.getSelection().toString();
+          if (selection.length > 0) return;
           if (showAwtf) {
             setShowAwtf(false);
             setShowAahaa(false);
@@ -42,13 +44,15 @@ const HomePage = () => {
           alt="bridge going into forest"
           className="background-image"
         />
-        <div className="section-container">
-          {showAwtf ? (
+        {showAwtf ? (
+          <div className="container">
             <WalkPage />
-          ) : (
+          </div>
+        ) : (
+          <div className="center-container">
             <img id="awtf-logo" src={awtfLogo} alt="A Walk To Freedom" />
-          )}
-        </div>
+          </div>
+        )}
       </div>
       <div
         id="aahaa-container"
@@ -57,10 +61,12 @@ const HomePage = () => {
           showAahaa
             ? "container-expand"
             : showAwtf
-            ? "container-shrink"
+            ? "container-shrink fixed-right"
             : "container-normal"
         }
         onClick={() => {
+          let selection = window.getSelection().toString();
+          if (selection.length > 0) return;
           if (showAahaa) {
             setShowAahaa(false);
             setShowAwtf(false);
@@ -75,13 +81,15 @@ const HomePage = () => {
           alt="person opening up to sunlight"
           className="background-image"
         />
-        <div className="section-container">
-          {showAahaa ? (
+        {showAahaa ? (
+          <div className="container">
             <AAHAAPage />
-          ) : (
+          </div>
+        ) : (
+          <div className="center-container">
             <img id="aahaa-logo" src={aahaaLogo} alt="AAHAA" />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );
