@@ -1,14 +1,18 @@
 #home{
     position:relative;
     width:100vw;
-    min-height:100vh;
     display:flex;
-    justify-content:space-between
+    justify-content:space-between;
+    overflow-x:hidden;
 }
 
 #home a {
     text-decoration: none;
     color: inherit;
+}
+
+#home > div {
+    min-height:100vh;
 }
 
 /* AWTF Container */
@@ -65,7 +69,7 @@
 }
 
 #home .container-expand{
-    width:80% ;
+    width:80%;
     cursor:auto;
 }
 

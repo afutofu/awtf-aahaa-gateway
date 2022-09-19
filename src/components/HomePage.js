@@ -9,6 +9,7 @@ import awtfBg from "../assets/awtf-bg.jpg";
 import aahaaBg from "../assets/aahaa-bg.jpg";
 
 import WalkPage from "./WalkPage";
+import AAHAAPage from "./AAHAAPage";
 
 const HomePage = () => {
   const [showAwtf, setShowAwtf] = useState(false);
@@ -41,8 +42,12 @@ const HomePage = () => {
           alt="bridge going into forest"
           className="background-image"
         />
-        <div className="container">
-          <img id="awtf-logo" src={awtfLogo} alt="A Walk To Freedom" />
+        <div className="section-container">
+          {showAwtf ? (
+            <WalkPage />
+          ) : (
+            <img id="awtf-logo" src={awtfLogo} alt="A Walk To Freedom" />
+          )}
         </div>
       </div>
       <div
@@ -70,8 +75,12 @@ const HomePage = () => {
           alt="person opening up to sunlight"
           className="background-image"
         />
-        <div className="container">
-          <img id="aahaa-logo" src={aahaaLogo} alt="AAHAA" />
+        <div className="section-container">
+          {showAahaa ? (
+            <AAHAAPage />
+          ) : (
+            <img id="aahaa-logo" src={aahaaLogo} alt="AAHAA" />
+          )}
         </div>
       </div>
     </section>
