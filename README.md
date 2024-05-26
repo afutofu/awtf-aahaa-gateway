@@ -10,7 +10,7 @@ Alcoholics & Addicts Helping Alcoholics & Addicts Page: [https://www.aahaasuppor
 
 Technologies used:
 
-- [React](https://reactjs.org/) - Frontend framework
+- [React](https://reactjs.org/)
 
 How to run site locally:
 
